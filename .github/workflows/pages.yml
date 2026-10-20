@@ -163,9 +163,13 @@ jobs:
           git add --all -- site .publication.json
           # Stage removal of the former root-level static files, preserving workflow files.
           git add --update
-          git commit -m 'Publish verified blog content'
-          gh auth setup-git
-          git push origin HEAD:main
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish verified blog content'
+            gh auth setup-git
+            git push origin HEAD:main
+          else
+            echo 'Verified public output is unchanged.'
+          fi
       - name: Remove temporary Pages artifact
         if: always() && steps.artifact.outputs.artifact_id != ''
         env:
