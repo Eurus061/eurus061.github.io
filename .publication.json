@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "content_commit": "78068ef95a2659dc9564ceb74d6390770714482f",
+  "content_commit": "531137c11bc25f0642748f816ea86d79a746b171",
   "engine_commit": "4e5cfe4408561c6a8ff639986fa536d2c6fe42fb",
   "articles": 23,
   "pages": 1,
@@ -262,8 +262,8 @@
     },
     {
       "path": "articles/cybersecurity-autumn-interviews/index.html",
-      "bytes": 63140,
-      "sha256": "6ef41f62071e096731e34b315aca7d9058442e92e5a7428719d8feeddda5b9a8"
+      "bytes": 63228,
+      "sha256": "701131cce27c5d0eba84441ce16da83202c823d8303bb37c26e2e27df8018d64"
     },
     {
       "path": "articles/dns-incident-response/index.html",
@@ -2076,5 +2076,5 @@
       "sha256": "1c44028f86eef82efa7f5f231fafb416ed28b5f7bf748882d4c94c47a4d6e5df"
     }
   ],
-  "total_bytes": 76024296
+  "total_bytes": 76024384
 }
