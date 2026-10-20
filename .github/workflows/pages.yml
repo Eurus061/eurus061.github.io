@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       force:
-        description: Rebuild the current content even if already published
+        description: Rebuild the latest articles and source even if already published
         type: boolean
         default: false
 
@@ -47,31 +47,22 @@ jobs:
           path: content
           ssh-key: ${{ secrets.BLOG_CONTENT_READ_KEY }}
           persist-credentials: false
-          sparse-checkout: site-engine.json
+          sparse-checkout: README.md
           sparse-checkout-cone-mode: false
-      - name: Check whether content changed
+      - name: Read the latest private site source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: Eurus061/jester-blog
+          ref: main
+          path: engine
+          ssh-key: ${{ secrets.BLOG_ENGINE_READ_KEY }}
+          persist-credentials: false
+      - name: Check whether articles or source changed
         id: version
         env:
           FORCE: ${{ inputs.force || false }}
         run: |
-          python3 - <<'PY'
-          import json, os, re, subprocess
-          from datetime import datetime, timezone
-          from pathlib import Path
-          config = json.loads(Path('content/site-engine.json').read_text())
-          assert config['repository'] == 'Eurus061/jester-blog'
-          revision = config['commit']
-          assert re.fullmatch('[0-9a-f]{40}', revision)
-          commit = subprocess.check_output(['git', '-C', 'content', 'rev-parse', 'HEAD']).decode().strip()
-          state = Path('public-site/.publication.json')
-          old = json.loads(state.read_text()) if state.exists() else {}
-          due = old.get('next_publication_at')
-          due = due and datetime.fromisoformat(due) <= datetime.now(timezone.utc)
-          changed = bool(due) or os.environ['FORCE'] == 'true' or old.get('content_commit') != commit or old.get('engine_commit') != revision
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
-              output.write(f'changed={str(changed).lower()}\nengine={revision}\ncontent={commit}\n')
-          print('Content update found.' if changed else 'The current content is already published.')
-          PY
+          python3 engine/scripts/content/versions.py select --content content --engine engine --publication public-site/.publication.json --output "$GITHUB_OUTPUT"
       - name: Read the candidate article files
         if: steps.version.outputs.changed == 'true'
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
@@ -80,15 +71,6 @@ jobs:
           ref: main
           path: candidate-content
           ssh-key: ${{ secrets.BLOG_CONTENT_READ_KEY }}
-          persist-credentials: false
-      - name: Read pinned private site engine
-        if: steps.version.outputs.changed == 'true'
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-        with:
-          repository: Eurus061/jester-blog
-          ref: ${{ steps.version.outputs.engine }}
-          path: engine
-          ssh-key: ${{ secrets.BLOG_ENGINE_READ_KEY }}
           persist-credentials: false
       - if: steps.version.outputs.changed == 'true'
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
@@ -104,6 +86,7 @@ jobs:
         working-directory: engine
         run: |
           test "$(git -C ../candidate-content rev-parse HEAD)" = '${{ steps.version.outputs.content }}'
+          test "$(git rev-parse HEAD)" = '${{ steps.version.outputs.engine }}'
           npm ci --no-audit --no-fund
           npm run repo:check
           npm test
@@ -116,26 +99,13 @@ jobs:
           npm run pages:prepare
           npm run pages:verify
           python3 scripts/content/publication.py --engine . --output ../public-site --content-commit '${{ steps.version.outputs.content }}'
-      - name: Reject stale content before deployment
+      - name: Reject stale articles or source before deployment
         if: steps.version.outputs.changed == 'true'
         env:
           CONTENT_READ_KEY: ${{ secrets.BLOG_CONTENT_READ_KEY }}
-          EXPECTED_COMMIT: ${{ steps.version.outputs.content }}
+          ENGINE_READ_KEY: ${{ secrets.BLOG_ENGINE_READ_KEY }}
         run: |
-          python3 - <<'PY'
-          import json, os, subprocess, tempfile, urllib.request
-          from pathlib import Path
-          with tempfile.TemporaryDirectory() as directory:
-              key = Path(directory) / 'key'
-              key.write_text(os.environ['CONTENT_READ_KEY'] + '\n')
-              key.chmod(0o600)
-              hosts = Path(directory) / 'hosts'
-              meta = json.load(urllib.request.urlopen('https://api.github.com/meta', timeout=20))
-              hosts.write_text(''.join('github.com ' + item + '\n' for item in meta['ssh_keys']))
-              env = {**os.environ, 'GIT_SSH_COMMAND': f'ssh -i {key} -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile={hosts}'}
-              latest = subprocess.check_output(['git', 'ls-remote', 'git@github.com:Eurus061/jester-blog-content.git', 'refs/heads/main'], env=env).decode().split()[0]
-              assert latest == os.environ['EXPECTED_COMMIT'], 'Newer content is waiting; retain the current site and let the next run publish it.'
-          PY
+          python3 engine/scripts/content/versions.py assert-current --content-commit '${{ steps.version.outputs.content }}' --engine-commit '${{ steps.version.outputs.engine }}'
       - name: Configure Pages
         if: steps.version.outputs.changed == 'true'
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
