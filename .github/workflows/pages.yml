@@ -78,7 +78,7 @@ jobs:
         with:
           repository: Eurus061/jester-blog-content
           ref: ${{ steps.version.outputs.content }}
-          path: content
+          path: candidate-content
           ssh-key: ${{ secrets.BLOG_CONTENT_READ_KEY }}
           persist-credentials: false
       - name: Read pinned private site engine
@@ -107,7 +107,7 @@ jobs:
           npm run repo:check
           npm test
           python3 -m unittest discover -s tests -p 'test_*.py'
-          npm run content:sync -- --content ../content
+          npm run content:sync -- --content ../candidate-content
           npm run content:images
           npm run check
           npm run build
