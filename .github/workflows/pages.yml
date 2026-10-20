@@ -77,7 +77,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: Eurus061/jester-blog-content
-          ref: ${{ steps.version.outputs.content }}
+          ref: main
           path: candidate-content
           ssh-key: ${{ secrets.BLOG_CONTENT_READ_KEY }}
           persist-credentials: false
@@ -103,6 +103,7 @@ jobs:
         if: steps.version.outputs.changed == 'true'
         working-directory: engine
         run: |
+          test "$(git -C ../candidate-content rev-parse HEAD)" = '${{ steps.version.outputs.content }}'
           npm ci --no-audit --no-fund
           npm run repo:check
           npm test
