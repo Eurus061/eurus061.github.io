@@ -1,0 +1,120 @@
+name: Publish production blog
+
+on:
+  schedule:
+    - cron: '10,25,40,55 * * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Rebuild even if this source and content are already deployed
+        type: boolean
+        default: false
+
+concurrency:
+  group: blog-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  production:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    env:
+      PUBLIC_SITE_URL: https://blog.365hbgj.com
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          path: public-site
+          ref: main
+          persist-credentials: false
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: Eurus061/jester-blog-content
+          ref: main
+          path: content
+          ssh-key: ${{ secrets.BLOG_CONTENT_READ_KEY }}
+          persist-credentials: false
+          sparse-checkout: README.md
+          sparse-checkout-cone-mode: false
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: Eurus061/jester-blog
+          ref: main
+          path: engine
+          ssh-key: ${{ secrets.BLOG_ENGINE_READ_KEY }}
+          persist-credentials: false
+      - name: Select source and content not yet deployed to production
+        id: version
+        env:
+          FORCE: ${{ inputs.force || false }}
+        run: python3 engine/scripts/content/versions.py select --content content --engine engine --publication public-site/.production.json --output "$GITHUB_OUTPUT"
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        if: steps.version.outputs.changed == 'true'
+        with:
+          repository: Eurus061/jester-blog-content
+          ref: main
+          path: candidate-content
+          ssh-key: ${{ secrets.BLOG_CONTENT_READ_KEY }}
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        if: steps.version.outputs.changed == 'true'
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        if: steps.version.outputs.changed == 'true'
+        with:
+          python-version: '3.12'
+      - name: Check, build and package production
+        if: steps.version.outputs.changed == 'true'
+        working-directory: engine
+        run: |
+          test "$(git rev-parse HEAD)" = '${{ steps.version.outputs.engine }}'
+          test "$(git -C ../candidate-content rev-parse HEAD)" = '${{ steps.version.outputs.content }}'
+          npm ci --no-audit --no-fund
+          npm run repo:check
+          npm test
+          python3 -m unittest discover -s tests -p 'test_*.py'
+          npm run content:sync -- --content ../candidate-content
+          npm run content:images
+          npm run check
+          npm run build
+          npm run verify
+          npm run pages:prepare
+          npm run pages:verify
+          npm run urls:generate
+          python3 scripts/deploy/package.py --output .private/production.tar.gz --content-commit '${{ steps.version.outputs.content }}' --verification ../candidate-content/site-verification
+      - name: Reject outdated source or content
+        if: steps.version.outputs.changed == 'true'
+        env:
+          CONTENT_READ_KEY: ${{ secrets.BLOG_CONTENT_READ_KEY }}
+          ENGINE_READ_KEY: ${{ secrets.BLOG_ENGINE_READ_KEY }}
+        run: python3 engine/scripts/content/versions.py assert-current --content-commit '${{ steps.version.outputs.content }}' --engine-commit '${{ steps.version.outputs.engine }}'
+      - name: Upload and activate the verified production release
+        if: steps.version.outputs.changed == 'true'
+        env:
+          PRODUCTION_DEPLOY_KEY: ${{ secrets.BLOG_PRODUCTION_DEPLOY_KEY }}
+          PRODUCTION_KNOWN_HOSTS: ${{ secrets.BLOG_PRODUCTION_KNOWN_HOSTS }}
+          PRODUCTION_HOST: ${{ vars.BLOG_PRODUCTION_HOST }}
+          PRODUCTION_USER: ${{ vars.BLOG_PRODUCTION_USER }}
+          PRODUCTION_PORT: ${{ vars.BLOG_PRODUCTION_PORT }}
+        run: python3 engine/scripts/deploy/upload.py --archive engine/.private/production.tar.gz --output "$RUNNER_TEMP/production.json" --engine-commit '${{ steps.version.outputs.engine }}' --content-commit '${{ steps.version.outputs.content }}'
+      - name: Record the version that production actually serves
+        if: steps.version.outputs.changed == 'true'
+        working-directory: public-site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp "$RUNNER_TEMP/production.json" .production.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- .production.json
+          git commit -m 'Record verified production deployment'
+          gh auth setup-git
+          # The separate Pages workflow can update main while production builds.
+          git pull --rebase origin main
+          git push origin HEAD:main
