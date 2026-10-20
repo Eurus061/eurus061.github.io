@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "content_commit": "b249c2a7131377a27c810c1b0a5eac65cd6f1506",
-  "engine_commit": "6894602845bc97d26edd6931b89348850af64118",
+  "content_commit": "d27587b1c6dbc1ac89be0b504fb3f25663144424",
+  "engine_commit": "1b4de39a0d57dd98db5cedac5d4d4171711be9c1",
   "articles": 23,
   "pages": 1,
   "files": [
@@ -442,8 +442,8 @@
     },
     {
       "path": "friends/index.html",
-      "bytes": 40893,
-      "sha256": "920f019017062466bb0cafa30bb610435508c2c98ac1b3ef31e5ffecb889897c"
+      "bytes": 41016,
+      "sha256": "f8cd2a003c6e92d0ede22652138de36a7816767df5dde551ec66bfaf06d90d21"
     },
     {
       "path": "index.html",
@@ -1996,6 +1996,11 @@
       "sha256": "1a2f64957ea7592fc84693312fd147229298ac3bf87a28f8e912ae640064eb80"
     },
     {
+      "path": "wp-content/uploads/2026/10/firm-avatar.jpg",
+      "bytes": 280567,
+      "sha256": "7beac157c7d0c72fbcbe20b95593a1be8c7c627507fb547e8963fdab66ca3b3a"
+    },
+    {
       "path": "一加ace-5-root指南（含恢复教程）/index.html",
       "bytes": 564,
       "sha256": "080daa09acd0bd41e9abb961c4354e1ec4e9f0284260eee6dcb7cba84c241402"
@@ -2081,5 +2086,5 @@
       "sha256": "1c44028f86eef82efa7f5f231fafb416ed28b5f7bf748882d4c94c47a4d6e5df"
     }
   ],
-  "total_bytes": 76076184
+  "total_bytes": 76356874
 }
