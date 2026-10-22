@@ -1,14 +1,14 @@
 {
   "articles": 24,
   "content_commit": "41519277c429f6d858186f396a25eb8a077a8559",
-  "engine_commit": "dac833930936ced813448c853c75bea7d37efd01",
-  "files_count": 427,
-  "manifest_sha256": "0af9a64785b33cf74f363fe3041c80350c9a9cad02cca2a196ade09e76f49d1b",
+  "engine_commit": "a16d09d8d27b2a38e63f57140a09d3737497cf1f",
+  "files_count": 428,
+  "manifest_sha256": "adf87f0c323dd0b92bc74cb94ec940083551c16565574091a0f62b7e73ee701c",
   "origin": "https://blog.365hbgj.com",
   "pages": 1,
-  "release": "20261022T125708141Z-dac8339",
-  "reused_files": 363,
+  "release": "20261022T133938753Z-a16d09d",
+  "reused_files": 359,
   "status": "deployed_and_origin_verified",
-  "transferred_bytes": 743238,
+  "transferred_bytes": 407505,
   "version": 1
 }
