@@ -32,6 +32,8 @@ jobs:
       actions: write
     env:
       PUBLIC_SITE_URL: https://blog.365hbgj.com
+      PUBLIC_COMMENTS_URL: https://blog.365hbgj.com/comments
+      PUBLIC_COMMENTS_EMAIL_ENABLED: 'false'
     steps:
       - name: Read public publication state
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6

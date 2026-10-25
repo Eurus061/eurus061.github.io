@@ -1,0 +1,54 @@
+name: Verify engine branch
+
+on:
+  workflow_dispatch:
+    inputs:
+      engine_ref:
+        description: Source branch or commit to verify without deployment
+        required: true
+        default: main
+        type: string
+
+concurrency:
+  group: engine-checks-${{ inputs.engine_ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: Eurus061/jester-blog
+          ref: ${{ inputs.engine_ref }}
+          path: engine
+          ssh-key: ${{ secrets.BLOG_ENGINE_READ_KEY }}
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Check source, tests and isolated sample build
+        run: |
+          npm ci --no-audit --no-fund
+          npm run repo:check
+          npm run check
+          npm test
+          python3 -m unittest discover -s tests -p 'test_*.py'
+          npm run build
+          npm run verify
+      - name: Verify Nginx fixture routing
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y nginx
+          npm run urls:verify -- --fixtures-only
