@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "content_commit": "310ce9502b8752755fa1e1d43f59aa380bca8f81",
+  "content_commit": "8f90cdd5c1df53573f2f512eb32de2387235c340",
   "engine_commit": "5673de98b98665543824f3cf2d34027c2c509e29",
   "articles": 25,
   "pages": 1,
@@ -83,7 +83,7 @@
     {
       "path": "404.html",
       "bytes": 16080,
-      "sha256": "cd761754729c2391426c74568665ca25decdd2e662eef47d4fdf4aeca05f542b"
+      "sha256": "77432944597d705d136967a661bd32c806dcfdbcde93aac39a4f58ddb1cbccf9"
     },
     {
       "path": "_astro/ArticleComments.astro_astro_type_script_index_0_lang.CPY8cOsC.js",
@@ -196,14 +196,14 @@
       "sha256": "2629f2ad3cb75a57d98de697127f5af7d777ef572bbcdfa6e3ce8f438cd4527e"
     },
     {
-      "path": "_astro/search-0e88af62b4977194.js",
-      "bytes": 119661,
-      "sha256": "0e88af62b49771946127497b5dbdcdd817954310c422f3f452b7cc8b2028d889"
+      "path": "_astro/search-821964d4d780cf55.js",
+      "bytes": 120270,
+      "sha256": "821964d4d780cf557226d12f950e3d343a77528b70c3ebc57d4279bf1fa6c551"
     },
     {
       "path": "about/index.html",
       "bytes": 20548,
-      "sha256": "072960408a389640613ed8adca35a1defb3127793330de245efbaa1b2e01c322"
+      "sha256": "c8e1f14db7b12f0f93308fc631f028a1090f1cfdb8aba93c1ddcc25909a154d1"
     },
     {
       "path": "ai赋能开发：利用trae20分钟实现全自动内网扫描工具编/index.html",
@@ -218,242 +218,242 @@
     {
       "path": "archives/2024/12/index.html",
       "bytes": 23728,
-      "sha256": "d471ebe963b74062785369d0e00537094d21034e3c49540d019054b25497c722"
+      "sha256": "e83e948c99712c00bf0b7adb91f7a52875d616baeec186348b4a26582e75282b"
     },
     {
       "path": "archives/2024/index.html",
       "bytes": 23689,
-      "sha256": "9cadfb7a8d482631482a94f77f9ab4cb90cfd9d0564de7eddae661484244e93d"
+      "sha256": "eb5575d9a80fc5d843d7b6eb321180560817cc3ffc2cda16f63587c9d89c84b9"
     },
     {
       "path": "archives/2025/01/index.html",
       "bytes": 19917,
-      "sha256": "44ab0bfd22a84683d54de99cf09ce74e2f06ac0e10c24814632f1a7d857d0ed8"
+      "sha256": "c71eef013829abdf414982d09a233539d0ff99e054eb97445432ae7ae520514f"
     },
     {
       "path": "archives/2025/02/index.html",
       "bytes": 18952,
-      "sha256": "989af8e9a7f05db64ebb9263e9595755bb173c4d01ce818207a3457315b11d0f"
+      "sha256": "83e0a3df035bc4e9183d172f4d6cce9ae98c129cc6b20f5968e776ce81877fef"
     },
     {
       "path": "archives/2025/03/index.html",
       "bytes": 19925,
-      "sha256": "8570c8fc0612e2e6c984370af8760ac333f132c91029afb398b6f33fb9a5d1d6"
+      "sha256": "428791e20ccf73cc02f5d6125d0e0dcdf07a6edd80b9ea2ff202430963496431"
     },
     {
       "path": "archives/2025/04/index.html",
       "bytes": 20945,
-      "sha256": "b305693ac2a55b23551ad6158407fcb6c9c18b661987ec25b546b4fd9becccb6"
+      "sha256": "c1b8d316ec1f90cbd40ac8260418153025f7ace785f445c305fb28093d0d387d"
     },
     {
       "path": "archives/2025/05/index.html",
       "bytes": 18987,
-      "sha256": "2ff8f1c09d9d170f91d949e0d92a6860671792e87a349be23b11e3fa8c22dc3b"
+      "sha256": "356664a76baaf4f9bfe318839e5ed73f2f75fa3ce0d9ea88463070faa52628ee"
     },
     {
       "path": "archives/2025/08/index.html",
       "bytes": 19981,
-      "sha256": "5bf20bc97f4d45b60c4e5b03667d0ab7dada5ad4bbbb2927bebf66ab688d0c57"
+      "sha256": "f1da2491ccabc143427ca5b92479fa0e53b812f585529eb5af131ba4ec9c9026"
     },
     {
       "path": "archives/2025/index.html",
       "bytes": 28915,
-      "sha256": "478f3540c290289490f8555f2e3951c37dca831eb24f4cf97dbdfa137ef7a1b3"
+      "sha256": "cd2f530aed6117b4c99dec78833ea308b1570423668593595758fb9882fb29f1"
     },
     {
       "path": "archives/2026/01/index.html",
       "bytes": 19871,
-      "sha256": "45c54f0da61c12c37e61ea5ce23fb307bfbe1b6144a8b64c23ee890affb6667d"
+      "sha256": "b188091fe290fcfa3e6347034760891a4c628b6f912856aa738a8f597f08a09f"
     },
     {
       "path": "archives/2026/03/index.html",
       "bytes": 20007,
-      "sha256": "5d1ab87ad579f2278c13def8dd85e63d2dbdf2df1cadf4b093cb54dee53826d9"
+      "sha256": "ca976ddb22a7f5e896520295be15a3fe89b5053b07f0bfe1750d0fdceea3af0b"
     },
     {
       "path": "archives/2026/07/index.html",
       "bytes": 18986,
-      "sha256": "445e09964edfb4a18a4b108074b122911957dc0a4b6ffac275f597f7fc728a90"
+      "sha256": "5d488058b79de8d3d682195e509940f7ec7eee17b9fa448f457a2edbca362c3d"
     },
     {
       "path": "archives/2026/10/index.html",
       "bytes": 21067,
-      "sha256": "4c46d9c766e0a3da79750dd4445657859eabc35930e117427e57ee6d66e8770a"
+      "sha256": "dc573173e352dd765d74cbee245c1d625b239f1b64acd1f0dc24e9124f1be2e8"
     },
     {
       "path": "archives/2026/index.html",
       "bytes": 26040,
-      "sha256": "ac9a501f00d6f3e2378699be908616cd0abbf613084c234d3e5d04e216c94825"
+      "sha256": "7968865525c8dfa9e5c4c59adb84243322418057111de918d0d7eb61540ae33f"
     },
     {
       "path": "articles/bind9-dns/index.html",
       "bytes": 33109,
-      "sha256": "fcb82007d5c1d14df3fa987924cc91e804f930805d0638efdb94d3b5e9dca2de"
+      "sha256": "066354baddd4bae2214abc6237789577229dc47786b771f4907a4c5cbe5014b6"
     },
     {
       "path": "articles/cloud-native-container-escape-privilege-escalation/index.html",
       "bytes": 78276,
-      "sha256": "3feaee3e2e56c068f5e85d9c541da7a9bda8bcf3ef0d5d65cdaab4682ca5e5fc"
+      "sha256": "be96e55f454a6d899f7e650e674e57c5c8aaf0c07b46bb029ec43e05eecbc894"
     },
     {
       "path": "articles/cybersecurity-autumn-interviews/index.html",
-      "bytes": 54754,
-      "sha256": "433e377eb65b38f74a92b21e9ed203c3c39ef7a81066f0e078503852f54bfade"
+      "bytes": 57338,
+      "sha256": "f25febb6c878da53809b28c5e331b45cf1c0ca8d98a16913ccaae8e757c1be8b"
     },
     {
       "path": "articles/dns-incident-response/index.html",
       "bytes": 28764,
-      "sha256": "d158a021e469eec06fbe0b5fc940a2afe602dab2c1ab6fa86482e90574b5a6e7"
+      "sha256": "84e7c1ed3707dde1f989de56d39697062b13ac942365d7f9f824e42195b90279"
     },
     {
       "path": "articles/first-wordpress-site/index.html",
       "bytes": 33412,
-      "sha256": "62df0bb8885e7bfe7bc2aa368be94284ef7828932f355223ee84156747f99d87"
+      "sha256": "6078dd05572da49e9b4a1f06c38ad920a82f0ec622498962726866b8855d5f3e"
     },
     {
       "path": "articles/food-notes/index.html",
       "bytes": 30390,
-      "sha256": "fe332e044c0bbb183d1c743155ae849215ff2616a881fb302e3e51387e57a73b"
+      "sha256": "52ed177d34fbfba0c860152fdd6c30e8eb851d15742c23586f9fd595888471f0"
     },
     {
       "path": "articles/index.html",
       "bytes": 44900,
-      "sha256": "dcc7fde9e5f0bba431afd0b95e4fabe8195ccdac7b176e440cca391e20e81342"
+      "sha256": "c2392cff8f47947f054e84361a5efb384123aa107dd04000574f82ad13544075"
     },
     {
       "path": "articles/mobile-traffic/index.html",
       "bytes": 34782,
-      "sha256": "087f1ed1daa730ded6e89807de6d98ef0b59a6f2bbaf795b24e03fe53aca81f4"
+      "sha256": "44195c6b4147c8401e587ba0b1f57c77d02d6c6648b52cfe57be7d9a620a2e7e"
     },
     {
       "path": "articles/nessus-windows/index.html",
       "bytes": 34447,
-      "sha256": "0fe29d1564847455e288d9d8ebb45a3903bdcd34e89a681ef2a7f4e7e77bd851"
+      "sha256": "c416f4a05b5a778a5ced850fbd8f5da79fc09a69d2391d3f77f151c957f0a0f0"
     },
     {
       "path": "articles/network-link-aggregation/index.html",
       "bytes": 30668,
-      "sha256": "0f21c18f722a2be1f78510fd08d51e6cef59a8297bc784c73eb8d34a4bb5858b"
+      "sha256": "d4ea65ddc2a5900f5d99f4d254c595c0796c4d2ac21464ba701bec4d7570e5a3"
     },
     {
       "path": "articles/network-vlan/index.html",
       "bytes": 32233,
-      "sha256": "b4d3b7f416e884b9a0897c564428489613b16ac1ae41d5f1222995efb750e25e"
+      "sha256": "56f85364e89b008121b56c4fd10bc9540e184bb55a4262758c6870af338e0ca6"
     },
     {
       "path": "articles/nginx-reverse-proxy/index.html",
       "bytes": 37892,
-      "sha256": "3746d9688409610e5d55cfdc9e795aeaa41effec7815a77a094e2054834370db"
+      "sha256": "baa3bd7abb5afa295c97dc13b9d6b3a75e4ded3f383c7589a8724079279d8ab9"
     },
     {
       "path": "articles/northern-autumn/index.html",
       "bytes": 38843,
-      "sha256": "54f9d07ce0bc62501db286144f8484d8815faa66550fa4b2f22b72bc096c39fa"
+      "sha256": "e02b6525326c58a6dda1ff8c995216c9ebf8a4031d3bd440c43d6d5dde684886"
     },
     {
       "path": "articles/oneplus-ace5-root/index.html",
       "bytes": 33940,
-      "sha256": "6e74d3f7e36b70552eaf61748bac6d54993f8a52cdc4fb5a2b66b8c2e2807353"
+      "sha256": "302e544842c750971dbd1559659dba85b237238937fa3a8ec11b3572b9807b38"
     },
     {
       "path": "articles/private-ip-anonymization/index.html",
       "bytes": 29438,
-      "sha256": "227e54119cf8cfd85918386cccfcad6b0be75a7c74f19b407d32a8a6c86fc8d3"
+      "sha256": "7fed9bf57196c616741f518d3d7a5cc1ab7b60deaedbef5c63be2d903ea150ea"
     },
     {
       "path": "articles/research-loop/index.html",
       "bytes": 40248,
-      "sha256": "b54c495040e0dd6aa2a0062828355af0ba4fc473c7e24efae0771f66ea0d8c24"
+      "sha256": "ec7df12905dc3dcc38082de047acabfe98bb52fb916419fc0826f14f0fdbeeff"
     },
     {
       "path": "articles/security-internship-interviews/index.html",
       "bytes": 37127,
-      "sha256": "0419cde9c07bf36db6bd89f0dedd085e30d995c62fd49003fda81222c71c65c3"
+      "sha256": "3b6ab72af68acf712bcfb2faec20ccf0c46ae408a9f67b43413c2e67335562ad"
     },
     {
       "path": "articles/strapi-deployment-api/index.html",
       "bytes": 31655,
-      "sha256": "48cf88f68686734bb93c9b1787ac7ba91d8e90e6269e260950518c7c689f8de2"
+      "sha256": "a5b18fc87f8d3063d4a947cc7db31dbb8e8de79275a3128df88bcf8f94b562b4"
     },
     {
       "path": "articles/strapi-project-setup/index.html",
       "bytes": 31875,
-      "sha256": "ed14e12bb34dc82368e50fb42f585dbb1cb8a91fa6396b5cdf20c40a25434443"
+      "sha256": "745c047767c575441463a7a45cd7c96cdf38095b39bdcbf79c97862de145572f"
     },
     {
       "path": "articles/tailscale-network/index.html",
       "bytes": 31166,
-      "sha256": "51ebef26903aa136dd94150bd086b9a69a6a837d7c16e488b71bfab70e265444"
+      "sha256": "6e5c597f3334ef0b4c9c12c359bc97727201b86b31b6671f4598094f65f3aab9"
     },
     {
       "path": "articles/trae-ai-development/index.html",
       "bytes": 33930,
-      "sha256": "e864c0b08ba217ff59b6d4ab9fda904f2f3adb43041b3b8b29f3b4c19bf6c90f"
+      "sha256": "0c02e3b7ff99b6261872eeaf34814e2cdcbe008bbb491e1b9285f94069255eec"
     },
     {
       "path": "articles/ubuntu-sqli-lab/index.html",
       "bytes": 33955,
-      "sha256": "cd20b0dec26f6e55fe10aa6cede13e655ba83d1846145c3598a86c20b05f8240"
+      "sha256": "c10cb883df100724c3ae72d505f67ac6e77d41248ad6351a39fed32d07e478e9"
     },
     {
       "path": "articles/vue-strapi-cors/index.html",
       "bytes": 37122,
-      "sha256": "306082901953db143cd2f698147d52468625a761a525df1367f49378c217bb99"
+      "sha256": "959dad4d1610228724de83406662cd90e71bb7d21e9a7883b94784b324bce04a"
     },
     {
       "path": "articles/winter-solstice/index.html",
       "bytes": 27397,
-      "sha256": "0bccd70647cf16d2da7c492c1aa4b27a6054c55a89974f4c12cf8427f09be12f"
+      "sha256": "a664907fde3ba31d6ad18a7eabdf2843bcc1e360391741fd14100f874cbf612b"
     },
     {
       "path": "articles/year-2024/index.html",
       "bytes": 27572,
-      "sha256": "60a1bb94fa76013bb608a6dad672ee383a1b14ee542a4c435f01fbef861ef4bf"
+      "sha256": "778abeec7c4fb97fff20cac9fa7ca53dabd7164e3d1a3f4a55e0f0ed0d5ad068"
     },
     {
       "path": "articles/year-2025/index.html",
       "bytes": 28445,
-      "sha256": "900039dc0207e78b3cc65dcfef4e5d29b5c88ddc8e14e3b1ceed59aa129d550e"
+      "sha256": "252831dc4da80eb0c4ff6ffc5adc2431f7517421df0d5367f5435dc75f8dad32"
     },
     {
       "path": "author/admin/index.html",
       "bytes": 18921,
-      "sha256": "b34e0c88c0724b05da7075d5525c1f69d243e88a9951a26e6700fc60fdbf984f"
+      "sha256": "bdb0a85bf54aec63552709fdcccae2c1f9e6c3fb844b10356a878cde9d247f16"
     },
     {
       "path": "author/sebastian/index.html",
       "bytes": 38693,
-      "sha256": "fa1fa1833093d26b398482b2f7f71980a4105f7447d004147481ce182de236aa"
+      "sha256": "a44b995d697c07649e8d7b58ff439b7e2ec96ea08b80072d2d5539818c7f4ed3"
     },
     {
       "path": "category/uncategorized/index.html",
       "bytes": 18468,
-      "sha256": "6b2017f06e25ce65b8dcfb83796945eda0c176ca556df5ca41b683e011ce5750"
+      "sha256": "380adf443e0a482ff2866253bc8ed0d61b81b9f0588b20a3865ee8a9f6ac87b8"
     },
     {
       "path": "category/个人/index.html",
       "bytes": 37757,
-      "sha256": "a1d1877e35d53ddf8451b4ad86b1decd4158a6476e143a1e3936119575838c8a"
+      "sha256": "deeeba2b212c265c1755dee3f288d0395feaa0d4b725e6b2fbe0559f2c8196b2"
     },
     {
       "path": "category/个人/网络实验/index.html",
       "bytes": 20137,
-      "sha256": "8f1d6b9e373fa607c51c9e1f0a8238db82648dae6886a0476d4dd222d786a398"
+      "sha256": "b63441b2e578fe4cb5767377f5277b15a64199a675228e92aedecbebc3095468"
     },
     {
       "path": "category/年度总结/index.html",
       "bytes": 19877,
-      "sha256": "670d7b247da98108974f175a1514f702687d9295438c7d6a360788c2543bb9a4"
+      "sha256": "6eac34cc7b46e14085ba2d9355b6d4be6616d164de64717774e9d015d9820757"
     },
     {
       "path": "category/情感/index.html",
       "bytes": 18461,
-      "sha256": "455b6a9ba0b37b0653bd9db687518d0f0d63a1d67f38aadfdc49cdbbfa37b507"
+      "sha256": "21f6044e94c8f480285e478921a7200a6281ec689531ac9c25f74ff49b3ecc07"
     },
     {
       "path": "category/智能渗透/index.html",
       "bytes": 18587,
-      "sha256": "820ae9627f4355a65ac1137f045bfe93db157193bd6419de3d55a60357f557b1"
+      "sha256": "d0cacd5c46a241d4fa8e467b80913d29630861027876c47faac0827f9618adf0"
     },
     {
       "path": "category/网络实验/index.html",
@@ -463,7 +463,7 @@
     {
       "path": "category/面经/index.html",
       "bytes": 19964,
-      "sha256": "63fda89c8934bcb88138035737a6103f86add6d77b27fd1699011f4f4ba5ec21"
+      "sha256": "a33da1fa6098469f929439e1a8aa0fbef8ab9f8a00cd11f85ee4c15252a785d5"
     },
     {
       "path": "favicon.svg",
@@ -483,17 +483,17 @@
     {
       "path": "friends/index.html",
       "bytes": 20257,
-      "sha256": "c09d8ae22e47387a74c1db7eaea48048fef68462984e7d181e9b3b0fb903e30b"
+      "sha256": "77ec2c14e7c960ce93e3993908979b3777b3c0ed65b7be2a78bece87aefe96c4"
     },
     {
       "path": "index.html",
       "bytes": 31212,
-      "sha256": "2fc831cf86e11f07db530e2ef06bdc8a2a3e97525a9a89d6ff8f03a9e1acf37d"
+      "sha256": "aaabcc357ddc9f4754a8b84bb32e942dd55627b4ebe5e4e77127a4b4a59eaa92"
     },
     {
       "path": "life/index.html",
       "bytes": 23239,
-      "sha256": "cdc16bf83ebe9a22c71810cebac586649c7a18d23bf38d8e689893f0e8f559ef"
+      "sha256": "66dcb88a30cdecf4055549d5f4db3092324b7ab621ae6f31de2dcd936241a208"
     },
     {
       "path": "page/1/index.html",
@@ -508,7 +508,7 @@
     {
       "path": "pictures/index.html",
       "bytes": 25348,
-      "sha256": "fff17c691d929b2538e4d2b2e8a61ece07e56ac8098bbf9f576eb3a014959ea7"
+      "sha256": "2f3e89866acf430e8bb9400c26b8f0754ca1b7a075644b4f8384f94d71c46235"
     },
     {
       "path": "robots.txt",
@@ -528,67 +528,67 @@
     {
       "path": "sitemap.xml",
       "bytes": 5832,
-      "sha256": "7fe958194b81b049762b472683acfa91640c0cd44d52d2073f96761263690770"
+      "sha256": "7c1dea1c7aaf2cabdc54aa310b4e10847b8ce93b6946655e80e686b277ef9597"
     },
     {
       "path": "tag/业务/index.html",
       "bytes": 23854,
-      "sha256": "0a356b9596c94ee02a119d1384271d95cd818d967faee91bb3d22360bb3ccb41"
+      "sha256": "a7e03c820c7b589e21d2c0ff347337a2bf2f44364fb671e84c25715395160eb3"
     },
     {
       "path": "tag/业务，技术/index.html",
       "bytes": 18630,
-      "sha256": "f98825feee8def78580b3b133a742b72f9f94070eab843ec0c06a3e3bf266394"
+      "sha256": "de7a386a531305157e991b2f7e0b6d974d4ad5bd871571a3d3104cfb149733c8"
     },
     {
       "path": "tag/开发/index.html",
       "bytes": 19922,
-      "sha256": "270b40005ba16dcc4f23608da54b1f81fa6aabf4559e60731d28a9a45fcc5267"
+      "sha256": "5dbe26537efbed66b905ebdbba70b2e8939410dfbe7f2d6ae9a8861674754fdf"
     },
     {
       "path": "tag/技术/index.html",
       "bytes": 33928,
-      "sha256": "67acb1a2d70a9a35eba3e5d6f90535424dea61f87b11a346053ca54034a28edd"
+      "sha256": "95e9cebe2aba4db9d41ed3f7d7d77064dddd2c2400b9bb86333b707eec22dfce"
     },
     {
       "path": "tag/记录/index.html",
       "bytes": 29773,
-      "sha256": "e8a950179ff416e2cdc92dbae5304c6a3c93d2010cc096c202489f8dcf122f0a"
+      "sha256": "060996d28456e0268103b4f84b93d5eb8dbeab9475628a6e7513a81d885e8f11"
     },
     {
       "path": "topics/ai-security/index.html",
       "bytes": 20230,
-      "sha256": "91ba7227bce68de028ecc524f91ee1a296d700c4581d3c507f919d41037bcb4b"
+      "sha256": "c243f23833141a422972518c2e930da356eb59d5015b533916e43c0d6e37e9ed"
     },
     {
       "path": "topics/development/index.html",
       "bytes": 21976,
-      "sha256": "158c646ed41ff91c3fd10607c3fee17880c257b1c7489877b7a676c4e1995514"
+      "sha256": "357546c1fbc375e7af147b10091b26c39fb428059cfd9fb10a05f23df973acca"
     },
     {
       "path": "topics/index.html",
       "bytes": 20919,
-      "sha256": "d88407cacac974334f62d8db79351597eb29c7c0af527cf48d3d4ad46aaef5e7"
+      "sha256": "5e70f7ec025e0a3f25a4e53cadc5de65757b74eccf70624e31f00ff5a5406d39"
     },
     {
       "path": "topics/life/index.html",
       "bytes": 22446,
-      "sha256": "0e337dfaf7edd8529875dec3e6736a8b91752ae175632588d07491f3ab670e27"
+      "sha256": "45c03c50fd3c1263d693dce5173d5f1ebea39a645dfd77b694f958253569d168"
     },
     {
       "path": "topics/mobile-security/index.html",
       "bytes": 20139,
-      "sha256": "2066569e5f2890b7c483a894121359ac5cbb180fc7c5600cea7f898fd25af885"
+      "sha256": "eae7eee7e0f510826383d1b26b95942ce15f2a97d92b04331930560150583cbd"
     },
     {
       "path": "topics/network-engineering/index.html",
       "bytes": 22898,
-      "sha256": "ff217845be5a596f0da441821b7d7745a117534fc05616de21a70ab48a74c480"
+      "sha256": "e15a28eae607374a7d7ddfcec8ce3f97f7d6f8e00242b648374dad8137a78d73"
     },
     {
       "path": "topics/security-practice/index.html",
       "bytes": 24909,
-      "sha256": "f03abf2b5197f3f18f153b95f00feabd3ce0bab7615e0fe40d1eefb83f7d6207"
+      "sha256": "2ee9149c7c1ae9c71a18556b911f7bf770aa3e400b8bde44da9371b0d9a2c23d"
     },
     {
       "path": "ubuntu命令行下部署sql注入练习web页面/index.html",
@@ -2296,5 +2296,5 @@
       "sha256": "ffff6d4544c06a7f818814ef80ec92c6c249f22383f3b5466efce754d8795a31"
     }
   ],
-  "total_bytes": 81666087
+  "total_bytes": 81669280
 }
