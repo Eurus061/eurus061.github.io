@@ -104,6 +104,7 @@ jobs:
       - name: Reject stale articles or source before deployment
         if: steps.version.outputs.changed == 'true'
         env:
+          GH_TOKEN: ${{ github.token }}
           CONTENT_READ_KEY: ${{ secrets.BLOG_CONTENT_READ_KEY }}
           ENGINE_READ_KEY: ${{ secrets.BLOG_ENGINE_READ_KEY }}
         run: |
