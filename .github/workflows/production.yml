@@ -93,6 +93,7 @@ jobs:
       - name: Reject outdated source or content
         if: steps.version.outputs.changed == 'true'
         env:
+          GH_TOKEN: ${{ github.token }}
           CONTENT_READ_KEY: ${{ secrets.BLOG_CONTENT_READ_KEY }}
           ENGINE_READ_KEY: ${{ secrets.BLOG_ENGINE_READ_KEY }}
         run: python3 engine/scripts/content/versions.py assert-current --content-commit '${{ steps.version.outputs.content }}' --engine-commit '${{ steps.version.outputs.engine }}'
